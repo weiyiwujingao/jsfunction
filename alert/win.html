@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹窗</title>
+<style type="text/css">
+	.CodeImg{
+		display:block;
+		margin:0 0 0 25px;
+		padding:0;
+		width:200px;
+		height:200px;
+	}
+	.CodeImg img{
+		width:200px;
+		height:200px;
+	}
+	/*弹窗 -----------------------*/
+	.qCls{/*输入正确，错误图标提示*/
+		background-image:url(Imgs/liIcon.png);
+		background-repeat:no-repeat;
+	}
+	.qMask{
+		width:100%;
+		height:100%;
+		display:none;
+		z-index:10001;
+		background-color:#000;
+		filter:alpha(opacity=50);  /*支持 IE 浏览器*/
+		-moz-opacity:0.50; /*支持 FireFox 浏览器*/
+		opacity:0.50;  /*支持 Chrome, Opera, Safari 等浏览器*/
+		position:fixed;
+		top:0;
+		left:0
+	}
+	.qWin{
+		z-index:10002;
+		display:none;
+		background-color:#fff;
+		width:300px;
+		font-family:"微软雅黑";
+		position:fixed;
+		top:0;
+		left:0	
+	}
+	.qWin h3{
+		margin:0;
+		height:49px;
+		line-height:49px;
+		font-size:20px;
+		text-align:center;
+		color:#333
+	}
+	a.qCls{
+		width:20px;
+		height:20px;
+		display:block;
+		background-position:right -228px;
+		position:absolute;
+		top:10px;
+		right:10px
+	}
+	
+	.qWmess{
+		padding:20px 25px;
+		overflow:auto;
+	}
+	.qWmess p{
+		padding:0;
+		margin:0;
+		line-height:30px;
+		font-size:16px;
+		overflow:hidden
+	}
+	.qWbtn{
+		text-align:center;
+		height:40px;
+		padding:0 0 20px 0;
+	}
+	.BtnCls{
+		margin:0 50px;
+		width:200px;
+		height:40px;
+		line-height:40px;
+		font-size:18px;
+		display:block;
+		background-color:#1f8af0;
+		color:#fff;
+		text-align:center;
+	}
+	.Tc{
+		text-align:center;
+	}
+</style>
+</head>
+
+<body>
+	<a href="javascript:;" onClick="$('#showWin').showWin();">查看</a>
+    <div class="qMask"></div>
+    <div class="qWin" id="showWin">
+    	<h3></h3>
+        <a href="javascript:;" class="qCls"></a>
+        <div class="qWmess">
+        	<a href="#" class="CodeImg">
+            	<img src="" title="" />
+            </a>
+            <p class="Tc">开票抬头</p>
+        </div>
+        <div class="qWbtn">
+        	<a href="javascript:;" class="BtnCls undo">关闭</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://hs.cnfol.com/f=uc/Js/Forum/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="Js/qWin.js"></script>
+    
+</body>
+</html>
